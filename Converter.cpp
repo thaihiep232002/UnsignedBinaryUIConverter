@@ -28,7 +28,7 @@ public:
 
 
 bool UnsignedBinaryUIConverter::isValidDec(long long value, int bitRange) {
-	bool check8bit = false, check16bit = false, check64bit = false;
+	bool check8bit = false, check16bit = false, check32bit = false;
 	if (bitRange == 8 && value >= 0 && value <= 225) {
 		check8bit = true;
 	}	
@@ -36,9 +36,9 @@ bool UnsignedBinaryUIConverter::isValidDec(long long value, int bitRange) {
 		check16bit = true;
 	}
 	if (bitRange == 32 && value >= 0 && value <= 4294967295) {
-		check64bit = true;
+		check32bit = true;
 	}
-	bool result = check8bit || check16bit || check64bit;
+	bool result = check8bit || check16bit || check32bit;
 	return result;
 }
 
